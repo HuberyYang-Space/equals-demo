@@ -3,16 +3,14 @@
     "target": "esnext",
     "jsx": "preserve",
     "lib": ["DOM", "ESNext"],
-    "baseUrl": ".",
     "module": "esnext",
     "moduleResolution": "bundler",
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["./src/*"]
     },
     "resolveJsonModule": true,
     "types": [
-      "vite/client",
-      "unplugin-vue-router/client"
+      "vite/client"
     ],
     "allowJs": true,
     "strict": true,
