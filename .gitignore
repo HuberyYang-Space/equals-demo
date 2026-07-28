@@ -12,6 +12,13 @@ dist
 dist-ssr
 *.local
 
+# Agent tooling (local only, not part of the project)
+CLAUDE.md
+AGENTS.md
+.claude
+.scratch
+docs/agents
+
 # Editor directories and files
 .idea
 .DS_Store
