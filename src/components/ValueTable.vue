@@ -6,6 +6,8 @@ const {
   main,
   offsetX,
   offsetY,
+  scaleX,
+  scaleY,
   isGuideLineShow,
   onBoxMouseEnter,
   onBoxMouseLeave,
@@ -37,8 +39,8 @@ function onBlockMouseEnter(x: number, y: number) {
       </div>
       <div ref="main" relative w-fit @mouseenter="onBoxMouseEnter" @mouseleave="onBoxMouseLeave">
         <TransitionGroup>
-          <div v-if="isGuideLineShow" :style="{ top: `${offsetY}px`, width: `${offsetX}px` }" pointer-events-none absolute left-0 right-0 z-10 h-.5 bg-red />
-          <div v-if="isGuideLineShow" :style="{ left: `${offsetX}px`, height: `${offsetY}px` }" pointer-events-none absolute bottom-0 top-0 z-10 w-.5 bg-red />
+          <div v-if="isGuideLineShow" :style="{ transform: `translateY(${offsetY}px) scaleX(${scaleX})`, transformOrigin: 'left', willChange: 'transform' }" pointer-events-none absolute left-0 top-0 z-10 h-.5 w-full bg-red />
+          <div v-if="isGuideLineShow" :style="{ transform: `translateX(${offsetX}px) scaleY(${scaleY})`, transformOrigin: 'top', willChange: 'transform' }" pointer-events-none absolute left-0 top-0 z-10 h-full w-.5 bg-red />
         </TransitionGroup>
         <div w-fit overflow-auto>
           <div v-for="(row, y) in state" :key="y" ma w-max flex items-center justify-center>
