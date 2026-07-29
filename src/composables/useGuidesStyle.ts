@@ -1,11 +1,11 @@
 export function useGuidesStyle() {
   const main = ref<HTMLDivElement | null>()
   const { x, y } = useMouse()
+  const throttledX = useThrottle(x, 16)
+  const throttledY = useThrottle(y, 16)
   const { left, top } = useElementBounding(main)
-  const horizontalTop = computed(() => `${y.value - top.value}px`)
-  const horizontalWidth = computed(() => `${x.value - left.value}px`)
-  const verticalleft = computed(() => `${x.value - left.value}px`)
-  const verticalHeight = computed(() => `${y.value - top.value}px`)
+  const offsetX = computed(() => throttledX.value - left.value)
+  const offsetY = computed(() => throttledY.value - top.value)
 
   const isGuideLineShow = ref(false)
   function onBoxMouseLeave() {
@@ -17,10 +17,8 @@ export function useGuidesStyle() {
   }
   return {
     main,
-    horizontalTop,
-    horizontalWidth,
-    verticalleft,
-    verticalHeight,
+    offsetX,
+    offsetY,
     isGuideLineShow,
     onBoxMouseEnter,
     onBoxMouseLeave,

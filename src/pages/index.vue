@@ -4,17 +4,9 @@
       <div ma w-fit flex items-center>
         <ValueTable />
         <div ml-10>
-          <div w-fit flex="~ justify-center gap-2">
-            <span i-ic:round-not-equal inline-block h-6 w-6 color-green />
-            <span>不相等</span>
-          </div>
-          <div w-fit flex="~ justify-center gap-2">
-            <span i-mdi:approximately-equal inline-block h-6 w-6 color-blue />
-            <span>宽松相等</span>
-          </div>
-          <div w-fit flex="~ justify-center gap-2">
-            <span i-ic:round-equals inline-block h-6 w-6 color-red />
-            <span>严格相等</span>
+          <div v-for="kind in equalityOrder" :key="kind" w-fit flex="~ justify-center gap-2">
+            <span :class="[equalityMeta[kind].icon, equalityMeta[kind].class]" inline-block h-6 w-6 />
+            <span>{{ equalityMeta[kind].label }}</span>
           </div>
         </div>
       </div>
