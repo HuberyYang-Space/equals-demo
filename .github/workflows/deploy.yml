@@ -47,7 +47,7 @@ jobs:
           fingerprint: ${{ secrets.SERVER_HOST_FINGERPRINT }}
           port: 22
           script: |
-            cd /www/wwwroot/50projects-vue3/ || exit 1
+            cd /www/wwwroot/js-equals-demo/ || exit 1
             find . -mindepth 1 ! -name 'dist.tar.gz' -exec rm -rf {} +
             tar -xzf dist.tar.gz
             rm dist.tar.gz
