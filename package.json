@@ -2,7 +2,7 @@
   "name": "vue3-dev-template",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.30.2",
+  "packageManager": "pnpm@11.22.0",
   "description": "A `quick-start` Vue3 Template",
   "author": "Hubery Yang",
   "license": "MIT",
