@@ -7,5 +7,5 @@
 </h5>
 
 <h5 align='center'>
-<a href="https://huberyyang.site:88/">Live Demo</a> | <a href="https://huberyyang.site:88/">在线演示</a>
+<a href="https://jsequals.huberyyang.site">Live Demo</a> | <a href="https://jsequals.huberyyang.site">在线演示</a>
 </h5>
